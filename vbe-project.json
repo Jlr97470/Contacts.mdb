@@ -1,0 +1,17 @@
+﻿{
+  "Info": {
+    "Class": "clsDbVbeProject",
+    "Description": "VBE Project"
+  },
+  "Items": {
+    "Name": "Ch06 Contacts",
+    "Description": "",
+    "FileName": "Contacts.mdb",
+    "HelpFile": "",
+    "HelpContextId": 0,
+    "ConditionalCompilationArguments": "",
+    "Mode": 0,
+    "Protection": 0,
+    "Type": 100
+  }
+}

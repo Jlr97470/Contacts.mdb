@@ -1,0 +1,262 @@
+﻿Version =19
+VersionRequired =19
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowAdditions = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridY =10
+    Width =7028
+    DatasheetFontHeight =10
+    ItemSuffix =8
+    Left =15270
+    Top =4125
+    Right =22305
+    Bottom =8550
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x0410ee175a75e640
+    End
+    RecordSource ="SELECT DISTINCTROW Contacts.* FROM Contacts WHERE ((Contacts.[RefContact]=forms!"
+        "Contacts!RéfContact)); "
+    Caption ="Appels"
+    OnOpen ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    OnActivate ="[Event Procedure]"
+    Begin
+        Begin Label
+            BackStyle =0
+            TextAlign =1
+            BackColor =-2147483633
+            ForeColor =-2147483630
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            BorderLineStyle =0
+            Width =850
+            Height =850
+        End
+        Begin Line
+            BorderLineStyle =0
+            SpecialEffect =3
+            Width =1701
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            BorderLineStyle =0
+            PictureAlignment =2
+            Width =1701
+            Height =1701
+        End
+        Begin CommandButton
+            Width =1701
+            Height =283
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            BorderLineStyle =0
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            BorderLineStyle =0
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+            BorderLineStyle =0
+            Width =1701
+            Height =1701
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BorderLineStyle =0
+            BackStyle =0
+            Width =4536
+            Height =2835
+            LabelX =-1701
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            BorderLineStyle =0
+            Width =1701
+            LabelX =-1701
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BorderLineStyle =0
+            Width =1701
+            Height =1417
+            LabelX =-1701
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BorderLineStyle =0
+            Width =1701
+            LabelX =-1701
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin Subform
+            BorderLineStyle =0
+            Width =1701
+            Height =1701
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+            Width =4536
+            Height =2835
+        End
+        Begin ToggleButton
+            Width =283
+            Height =283
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin Tab
+            BackStyle =0
+            Width =5103
+            Height =3402
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="EntêteFormulaire"
+        End
+        Begin Section
+            Height =4435
+            BackColor =-2147483633
+            Name ="Détail"
+            Begin
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OverlapFlags =93
+                    Left =1875
+                    Top =171
+                    Height =255
+                    Name ="RéfContact"
+                    ControlSource ="RéfContact"
+                    DefaultValue ="=Forms![Contacts]![RéfContact]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =171
+                            Top =171
+                            Width =1560
+                            Height =255
+                            Name ="RéfContact_Étiquette"
+                            Caption ="Réf contact"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OverlapFlags =93
+                    Left =1875
+                    Top =513
+                    Height =255
+                    TabIndex =1
+                    Name ="RéfAppel"
+                    ControlSource ="=[Sous-formulaire Liste des appels].form![RéfAppel]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =171
+                            Top =513
+                            Width =1560
+                            Height =255
+                            Name ="RéfAppel_Étiquette"
+                            Caption ="Réf appel"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OverlapFlags =247
+                    Left =1875
+                    Top =171
+                    Width =2310
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =2
+                    Name ="Nom contact"
+                    ControlSource ="=[Forms]![Contacts]![Prenom] & \" \" & [Forms]![Contacts]![NomFamille]"
+                    EventProcPrefix ="Nom_contact"
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =171
+                            Top =171
+                            Width =1560
+                            Height =255
+                            Name ="Nom contact_Étiquette"
+                            Caption ="Nom contact"
+                            EventProcPrefix ="Nom_contact_Étiquette"
+                        End
+                    End
+                End
+                Begin Subform
+                    OverlapFlags =247
+                    Left =171
+                    Top =570
+                    Width =6800
+                    Height =2315
+                    TabIndex =3
+                    Name ="Sous-formulaire Liste des appels"
+                    SourceObject ="Form.Sous-formulaire Liste des appels"
+                    LinkChildFields ="RéfContact"
+                    LinkMasterFields ="RéfContact"
+                    EventProcPrefix ="Sous_formulaire_Liste_des_appels"
+                End
+                Begin Subform
+                    OverlapFlags =85
+                    Left =171
+                    Top =2964
+                    Width =6800
+                    Height =1300
+                    TabIndex =4
+                    Name ="Sous-formulaire Détail des appels"
+                    SourceObject ="Form.Sous-formulaire Détail des appels"
+                    LinkChildFields ="RéfAppel"
+                    LinkMasterFields ="RéfAppel"
+                    OnEnter ="[Event Procedure]"
+                    EventProcPrefix ="Sous_formulaire_Détail_des_appels"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="PiedFormulaire"
+        End
+    End
+End
+CodeBehindForm
+' See "Appels.cls"

@@ -1,0 +1,23 @@
+﻿CREATE TABLE [Contacts] (
+  [RefContact] AUTOINCREMENT CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [Prenom] VARCHAR (50),
+  [NomFamille] VARCHAR (50),
+  [Nomfamilier] VARCHAR (50),
+  [Adresse] VARCHAR (255),
+  [Ville] VARCHAR (50),
+  [DepartementOuRegion] VARCHAR (20),
+  [CodePostal] VARCHAR (20),
+  [Région] VARCHAR (50),
+  [Pays] VARCHAR (50),
+  [NomSociete] VARCHAR (50),
+  [Titre] VARCHAR (50),
+  [TelProfessionnel] VARCHAR (30),
+  [PosteTravail] VARCHAR (20),
+  [TelMobile] VARCHAR (30),
+  [NumTelecopie] VARCHAR (30),
+  [NomCourrierÉlec] VARCHAR (50),
+  [DernièreDateRéunion] DATETIME,
+  [RéfTypeContact] LONG,
+  [RecommandéPar] VARCHAR (50),
+  [Remarques] LONGTEXT
+)

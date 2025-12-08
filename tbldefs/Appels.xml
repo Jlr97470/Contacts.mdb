@@ -1,0 +1,98 @@
+﻿<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+  <xsd:element name="dataroot">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Appels" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="generated" type="xsd:dateTime"></xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Appels">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <od:index index-name="DateAppel" index-key="DateAppel " primary="no" unique="no" clustered="no" order="asc"></od:index>
+        <od:index index-name="PrimaryKey" index-key="RéfAppel " primary="yes" unique="yes" clustered="no" order="asc"></od:index>
+        <od:index index-name="RéfContact" index-key="RéfContact " primary="no" unique="no" clustered="no" order="asc"></od:index>
+        <od:index index-name="Reference1" index-key="RéfContact " primary="no" unique="no" clustered="no" order="asc"></od:index>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="RéfAppel" minOccurs="1" od:jetType="autonumber" od:sqlSType="int" od:autoUnique="yes" od:nonNullable="yes" type="xsd:int">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="Caption" type="12" value="Réf appel"></od:fieldProperty>
+            </xsd:appinfo>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="RéfContact" minOccurs="1" od:jetType="longinteger" od:sqlSType="int" od:nonNullable="yes" type="xsd:int">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="Required" type="1" value="1"></od:fieldProperty>
+              <od:fieldProperty name="Caption" type="12" value="Réf contact"></od:fieldProperty>
+              <od:fieldProperty name="DisplayControl" type="3" value="111"></od:fieldProperty>
+              <od:fieldProperty name="RowSourceType" type="10" value="Table/Query"></od:fieldProperty>
+              <od:fieldProperty name="RowSource" type="12" value="Select [RéfContact],[NomFamille] &amp; &quot;,&quot; &amp; [Prénom] From [Contacts] ORDER BY [NomFamille] &amp; &quot;,&quot; &amp; [Prénom];"></od:fieldProperty>
+              <od:fieldProperty name="BoundColumn" type="3" value="1"></od:fieldProperty>
+              <od:fieldProperty name="ColumnCount" type="3" value="2"></od:fieldProperty>
+              <od:fieldProperty name="ColumnHeads" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="ColumnWidths" type="10" value="0;2880"></od:fieldProperty>
+              <od:fieldProperty name="ListRows" type="3" value="8"></od:fieldProperty>
+              <od:fieldProperty name="ListWidth" type="10" value="5"></od:fieldProperty>
+              <od:fieldProperty name="LimitToList" type="1" value="1"></od:fieldProperty>
+            </xsd:appinfo>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="DateAppel" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="Required" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="Caption" type="12" value="Date de l'appel"></od:fieldProperty>
+              <od:fieldProperty name="Format" type="10" value="Short Date"></od:fieldProperty>
+              <od:fieldProperty name="InputMask" type="10" value="99/99/00;0"></od:fieldProperty>
+            </xsd:appinfo>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="HeureAppel" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="Required" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="Caption" type="12" value="Heure de l'appel"></od:fieldProperty>
+              <od:fieldProperty name="Format" type="10" value="Medium Time"></od:fieldProperty>
+              <od:fieldProperty name="InputMask" type="10" value="09:00 &gt;LL;0"></od:fieldProperty>
+            </xsd:appinfo>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="Sujet" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="AllowZeroLength" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="Required" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="Caption" type="12" value="Sujet"></od:fieldProperty>
+            </xsd:appinfo>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="255"></xsd:maxLength>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="Remarques" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="AllowZeroLength" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="Required" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="Caption" type="12" value="Remarques"></od:fieldProperty>
+            </xsd:appinfo>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="536870910"></xsd:maxLength>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
