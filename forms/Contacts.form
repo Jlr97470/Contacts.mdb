@@ -14,10 +14,10 @@ Begin Form
     Width =10374
     DatasheetFontHeight =10
     ItemSuffix =66
-    Left =2100
-    Top =1560
-    Right =12765
-    Bottom =5895
+    Left =1000
+    Top =1000
+    Right =50000
+    Bottom =50000
     DatasheetGridlinesColor =12632256
     OnFilter ="[Event Procedure]"
     OnApplyFilter ="[Event Procedure]"

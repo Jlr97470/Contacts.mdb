@@ -4,6 +4,7 @@
     "Description": "Project Properties (Access)"
   },
   "Items": {
-    "VCS Build Path": "D:\\MES_SOURCES\\ACCESS\\EXEMPLES\\ACCESS 2000\\CONTACTS"
+    "VCS Build Path": "D:\\MES_SOURCES\\ACCESS\\EXEMPLES\\ACCESS 2000\\CONTACTS",
+    "VCS Source Path": "D:\\MES_SOURCES\\GITHUB\\%dbname%"
   }
 }

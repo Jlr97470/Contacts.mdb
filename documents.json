@@ -6,9 +6,24 @@
   "Items": {
     "Databases": {
       "SummaryInfo": {
-        "Author": "Véronique Campillo",
-        "Company": "Langages et Technologies",
-        "Title": "Ch01 Contacts"
+        "Author": {
+          "Type": 10,
+          "Value": "Véronique Campillo"
+        },
+        "Company": {
+          "Type": 10,
+          "Value": "Langages et Technologies"
+        },
+        "Title": {
+          "Type": 10,
+          "Value": "Ch01 Contacts"
+        }
+      },
+      "UserDefined": {
+        "ReplicateProject": {
+          "Type": 1,
+          "Value": true
+        }
       }
     }
   }
